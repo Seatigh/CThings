@@ -1,8 +1,8 @@
-#include "lib/linkedlist.h"
+#include "../lib/linkedlist.h"
 
 extern int debug;
 
-struct Node * init_node(char data) {
+struct Node * initNode(char data) {
 	printf("[\e[93mlink\e[0m] Init note -> data: %c\n", data);
 	struct Node * node = malloc(sizeof(struct Node));
 	node->data = data;
@@ -52,7 +52,7 @@ int insertNodeAt (LinkedList * list, struct Node * node, int pos) {
 		return -1;
 	}
 	if (pos < 0) {
-		printf("Error - invalid position to insert at.\n");
+		printf("Error - invalid position to insert at(%d/%d).\n", pos, list->size);
 		return -1;
 	}
 	printf("[\e[93mlink\e[0m] Insert node -> list: %p\tdata: %c\tpos: %d\n", &list, node->data, pos);
@@ -87,7 +87,7 @@ struct Node * getNode (LinkedList * list, int pos) {
 		return NULL;
 	}
 	if (pos < 0 || pos > list->size) {
-		printf("Error - invalid position to look for.\n");
+		printf("Error - invalid position to look for (%d/%d).\n", pos, list->size);
 		return NULL;
 	}
 	struct Node * aux = list->head;

@@ -1,6 +1,6 @@
-#include "lib/stack.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "../lib/stack.h"
 
 int push (stack *s, unsigned char c) {
 	if (s->pointer < SIZE) {

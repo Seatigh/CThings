@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "lib/linkedlist.h"
-//#include "lib/stack.h"
+#include "../lib/linkedlist.h"
+#include "../lib/stack.h"
 
 int factorial (int n);
 void printS(char * s);
@@ -32,7 +32,7 @@ int main (int argc, char ** args) {
 	/*********
 	 * STACK *
 	 *********/	
-/*	stack s;
+	stack s;
 	s.pointer = 0;
 	unsigned char c = 'a';
 	top(&s);
@@ -49,11 +49,10 @@ int main (int argc, char ** args) {
 	while (!isEmpty(&s)) {
 		printf("[\e[92mmain\e[0m] %d\n", (int) pop(&s));
 	}
-*/
 	/***************
 	 * LINKED LIST *
 	 ***************/
-	printf("[\e[92mmain\e[0m] ___________TEST LINKED LIST___________\n\n");
+/*	printf("[\e[92mmain\e[0m] ___________TEST LINKED LIST___________\n\n");
 	LinkedList list;
 	list.head = NULL;
 	list.size = 0;
@@ -61,11 +60,11 @@ int main (int argc, char ** args) {
 	printf("[\e[92mmain\e[0m] IsEmpty(%d)\n", listIsEmpty(&list)); 
 	//printList(&list);
 	for (int i = 97; i < 107; i++) {
-		struct Node* n = init_node((char) i);
+		struct Node* n = initNode((char) i);
 		printf("[\e[92mmain\e[0m] Insert(%d)\n", insertNode(&list, n));
 		printList(&list);
-	}
-	//struct Node n = init_node(d, NULL);
+	}	//struct Node n = initNode(d, NULL);
+	//struct Node n = initNode(d, NULL);
 	//printf("[\e[92mmain\e[0m] Node:\n\tdata: %c\tnext: \n", head->data);
 	//n.data++;
 	//printf("[\e[92mmain\e[0m] Insert: %d\n", insertNode(&list, &n));
@@ -73,18 +72,18 @@ int main (int argc, char ** args) {
 	printf("[\e[92mmain\e[0m] Remove head(%d)\n", removeHead(&list));
 	printList(&list);
 	printf("[\e[92mmain\e[0m] List info:\n\tsize: %d\n\thead: %p\n", getSize(&list), &list.head);
-	printf("[\e[92mmain\e[0m] InsertAt(%d)\n", insertNodeAt(&list, init_node('z'), 0));
+	printf("[\e[92mmain\e[0m] InsertAt(%d)\n", insertNodeAt(&list, initNode('z'), 0));
 	printList(&list);
-	printf("[\e[92mmain\e[0m] InsertAt(%d)\n", insertNodeAt(&list, init_node('x'), 4));
+	printf("[\e[92mmain\e[0m] InsertAt(%d)\n", insertNodeAt(&list, initNode('x'), 4));
 	printList(&list);
-	printf("[\e[92mmain\e[0m] InsertAt(%d)\n", insertNodeAt(&list, init_node('y'), 20));
+	printf("[\e[92mmain\e[0m] InsertAt(%d)\n", insertNodeAt(&list, initNode('y'), 20));
 	printList(&list);
 	printf("[\e[92mmain\e[0m] RemoveLast(%d)\n", removeLast(&list));
 	printList(&list);
 	printf("[\e[92mmain\e[0m] RemoveLast(%d)\n", removeLast(&list));
 	printList(&list);
 	printf("[\e[92mmain\e[0m] List info:\n\tsize: %d\n\thead: %p\n", getSize(&list), &list.head);
-	printf("[\e[92mmain\e[0m] InsertAt(%d)\n", insertNodeAt(&list, init_node('a'), 0));
+	printf("[\e[92mmain\e[0m] InsertAt(%d)\n", insertNodeAt(&list, initNode('a'), 0));
 	printList(&list);
 	printf("[\e[92mmain\e[0m] List info:\n\tsize: %d\n\thead: %p\n", getSize(&list), list.head);
 	struct Node * gNode = getNode(&list, 0);
@@ -104,9 +103,15 @@ int main (int argc, char ** args) {
 	printf("[\e[92mmain\e[0m] RemoveNodeBy(%d)\n", removeNodeBy(&list, 'x')); 
 	printList(&list);
 	printf("[\e[92mmain\e[0m] List info:\n\tsize: %d\n\thead: %p\n", getSize(&list), list.head);
-	printf("[\e[92mmain\e[0m] IsEmpty(%d)\n", listIsEmpty(&list)); 
+	printf("[\e[92mmain\e[0m] IsEmpty(%d)\n", listIsEmpty(&list));
+*/
 	return 0;
 }
+
+/** name: factorial
+  * parameters: integer
+  * return: integer
+  */
 
 int factorial (int n) {
 	
@@ -120,6 +125,11 @@ int factorial (int n) {
 		return n*factorial(n - 1);
 	}
 }
+
+/** name: printS
+  * parameter: char pointer
+  * return: void
+  */
 
 void printS(char * s) {
 	char c = '0';
